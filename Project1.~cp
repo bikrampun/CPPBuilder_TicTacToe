@@ -2,7 +2,7 @@
 #include <vcl\vcl.h>
 #pragma hdrstop
 //---------------------------------------------------------------------------
-USEFORM("\TicTacToe_CPPBuilder\TicTacToe.cpp", Form1);
+USEFORM("TicTacToe.cpp", Form1);
 USERES("Project1.res");
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)

@@ -28,6 +28,7 @@ __published:	// IDE-managed Components
         TLabel *lblPlayerX;
         TLabel *Label3;
         TLabel *lblPlayerO;
+        TPanel *Panel2;
         void __fastcall btnExitClick(TObject *Sender);
         void __fastcall scoreKeeper(TObject *Sender);
         void __fastcall callEnable(TObject *Sender);

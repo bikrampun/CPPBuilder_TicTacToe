@@ -6,9 +6,9 @@ BCB = $(MAKEDIR)\..
 !endif
 # ---------------------------------------------------------------------------
 PROJECT = Project1.exe
-OBJFILES = Project1.obj \TicTacToe_CPPBuilder\TicTacToe.obj
+OBJFILES = Project1.obj TicTacToe.obj
 RESFILES = Project1.res
-RESDEPEN = $(RESFILES) \TicTacToe_CPPBuilder\TicTacToe.dfm
+RESDEPEN = $(RESFILES) TicTacToe.dfm
 LIBFILES = 
 DEFFILE = 
 # ---------------------------------------------------------------------------

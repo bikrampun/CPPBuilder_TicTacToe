@@ -1,3 +1,7 @@
+/*
+Class project 2022
+BE Software "Day"
+*/
 //---------------------------------------------------------------------------
 #include <vcl\vcl.h>
 #pragma hdrstop
@@ -7,7 +11,8 @@
 #pragma resource "*.dfm"
 TForm1 *Form1;
 //---------------------------------------------------------------------------
-bool checker;
+//here, checker is used to check the button enable or not.
+bool checker=false;
 //---------------------------------------------------------------------------
 void __fastcall TForm1::callEnable(TObject *Sender)
 {
@@ -25,11 +30,12 @@ void __fastcall TForm1::callEnable(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::scoreKeeper(TObject *Sender)
 {
-        Integer i,q;
-
+        Integer i,j;
+        //here, i,j are variable to keep value of score
         i = StrToInt(lblPlayerX->Caption);
-        q = StrToInt(lblPlayerO->Caption);
+        j = StrToInt(lblPlayerO->Caption);
 
+        //here, we check the player has win or not.
         if(((btnTic1->Caption=="X") && (btnTic2->Caption=="X") && (btnTic3->Caption=="X"))
                 || ((btnTic4->Caption=="X") && (btnTic5->Caption=="X") && (btnTic6->Caption=="X"))
                 || ((btnTic7->Caption=="X") && (btnTic8->Caption=="X") && (btnTic9->Caption=="X"))
@@ -40,7 +46,7 @@ void __fastcall TForm1::scoreKeeper(TObject *Sender)
                 || ((btnTic7->Caption=="X") && (btnTic5->Caption=="X") && (btnTic3->Caption=="X")))
         {
                 lblPlayerX->Caption = IntToStr(i+1);
-                ShowMessage("The Winner is PlayerX");
+                ShowMessage("The Winner is Player X");
                 callEnable(Sender);
         }
         if(((btnTic1->Caption=="O") && (btnTic2->Caption=="O") && (btnTic3->Caption=="O"))
@@ -52,8 +58,8 @@ void __fastcall TForm1::scoreKeeper(TObject *Sender)
                 || ((btnTic1->Caption=="O") && (btnTic5->Caption=="O") && (btnTic9->Caption=="O"))
                 || ((btnTic7->Caption=="O") && (btnTic5->Caption=="O") && (btnTic3->Caption=="O")))
         {
-                lblPlayerO->Caption = IntToStr(i+1);
-                ShowMessage("The Winner is PlayerO");
+                lblPlayerO->Caption = IntToStr(j+1);
+                ShowMessage("The Winner is Player O");
                 callEnable(Sender);
         }
 
@@ -66,7 +72,10 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::btnTic1Click(TObject *Sender)
 {
+     if(!(btnTic1->Caption=='X'|| btnTic1->Caption=="O")){
+     //it will give only one time click i.e not to change whenever clicked.
         if(checker==false)
+        //check which player turn is up.
         {
                 btnTic1->Caption="X";
                 checker=true;
@@ -77,10 +86,13 @@ void __fastcall TForm1::btnTic1Click(TObject *Sender)
                 checker=false;
         }
         scoreKeeper(Sender);
+        //passes the values everytime to check the player won or not.
+     }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::btnTic2Click(TObject *Sender)
 {
+     if(!(btnTic2->Caption=='X'|| btnTic2->Caption=="O")){
         if(checker==false)
         {
                 btnTic2->Caption="X";
@@ -92,10 +104,12 @@ void __fastcall TForm1::btnTic2Click(TObject *Sender)
                 checker=false;
         }
         scoreKeeper(Sender);
+     }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::btnTic3Click(TObject *Sender)
 {
+     if(!(btnTic3->Caption=='X'|| btnTic3->Caption=="O")){
         if(checker==false)
         {
                 btnTic3->Caption="X";
@@ -107,10 +121,12 @@ void __fastcall TForm1::btnTic3Click(TObject *Sender)
                 checker=false;
         }
         scoreKeeper(Sender);
+     }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::btnTic4Click(TObject *Sender)
 {
+     if(!(btnTic4->Caption=='X'|| btnTic4->Caption=="O")){
         if(checker==false)
         {
                 btnTic4->Caption="X";
@@ -122,10 +138,12 @@ void __fastcall TForm1::btnTic4Click(TObject *Sender)
                 checker=false;
         }
         scoreKeeper(Sender);
+     }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::btnTic5Click(TObject *Sender)
 {
+     if(!(btnTic5->Caption=='X'|| btnTic5->Caption=="O")){
         if(checker==false)
         {
                 btnTic5->Caption="X";
@@ -137,10 +155,12 @@ void __fastcall TForm1::btnTic5Click(TObject *Sender)
                 checker=false;
         }
         scoreKeeper(Sender);
+     }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::btnTic6Click(TObject *Sender)
 {
+     if(!(btnTic6->Caption=='X'|| btnTic6->Caption=="O")){
         if(checker==false)
         {
                 btnTic6->Caption="X";
@@ -152,10 +172,12 @@ void __fastcall TForm1::btnTic6Click(TObject *Sender)
                 checker=false;
         }
         scoreKeeper(Sender);
+     }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::btnTic7Click(TObject *Sender)
 {
+     if(!(btnTic7->Caption=='X'|| btnTic7->Caption=="O")){
         if(checker==false)
         {
                 btnTic7->Caption="X";
@@ -167,10 +189,12 @@ void __fastcall TForm1::btnTic7Click(TObject *Sender)
                 checker=false;
         }
         scoreKeeper(Sender);
+     }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::btnTic8Click(TObject *Sender)
 {
+     if(!(btnTic8->Caption=='X'|| btnTic8->Caption=="O")){
         if(checker==false)
         {
                 btnTic8->Caption="X";
@@ -182,10 +206,12 @@ void __fastcall TForm1::btnTic8Click(TObject *Sender)
                 checker=false;
         }
         scoreKeeper(Sender);
+     }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::btnTic9Click(TObject *Sender)
 {
+     if(!(btnTic9->Caption=='X'|| btnTic9->Caption=="O")){
         if(checker==false)
         {
                 btnTic9->Caption="X";
@@ -197,15 +223,18 @@ void __fastcall TForm1::btnTic9Click(TObject *Sender)
                 checker=false;
         }
         scoreKeeper(Sender);
+     }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::btnExitClick(TObject *Sender)
 {
  Close();
+ //exit the program.
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::btnNewGameClick(TObject *Sender)
 {
+//new game continue with previous record.
         btnTic1->Caption="";
         btnTic2->Caption="";
         btnTic3->Caption="";
@@ -216,7 +245,6 @@ void __fastcall TForm1::btnNewGameClick(TObject *Sender)
         btnTic8->Caption="";
         btnTic9->Caption="";
 
-
         btnTic1->Enabled = true;
         btnTic2->Enabled = true;
         btnTic3->Enabled = true;
@@ -226,11 +254,13 @@ void __fastcall TForm1::btnNewGameClick(TObject *Sender)
         btnTic6->Enabled = true;
         btnTic7->Enabled = true;
         btnTic8->Enabled = true;
-        btnTic9->Enabled = true;        
+        btnTic9->Enabled = true;
+        //this will change the player turn by which the previous data
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::btnResetClick(TObject *Sender)
 {
+//clear the record and start with new game.
         lblPlayerX->Caption = "0";
         lblPlayerO->Caption = "0";
 
